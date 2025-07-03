@@ -16,12 +16,15 @@ Semantic Searchの実装を試した
 * src/get_data.py
   * JSONLのデータから必要な情報を抽出してファイル化
   * RecursiveCharacterTextSplitter でファイルをチャンク化
+
 `$ python3 src/get_data.py -f hogehoge.jsonl`
 
 * src/search.py
   * bge-m3でベクトルした文書情報をChromaのIndexingで格納
   * Vector Indexを使って検索
+
 `$ python3 src/search.py -f data.jsonl`
+
 `$ python3 src/search.py -search -db -f queries.txt > result.txt`
 
 * src/mk_data.py
