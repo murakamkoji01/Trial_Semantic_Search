@@ -16,19 +16,21 @@ Semantic Searchの実装を試した
 * src/get_data.py
   * JSONLのデータから必要な情報を抽出してファイル化
   * RecursiveCharacterTextSplitter でファイルをチャンク化
-
-`$ python3 src/get_data.py -f hogehoge.jsonl`
+  * `$ python3 src/get_data.py -f hogehoge.jsonl`
 
 * src/search.py
   * bge-m3でベクトルした文書情報をChromaのIndexingで格納
+    * データからIndexを作成する
+    * `$ python3 src/search.py -f data.jsonl`
+
   * Vector Indexを使って検索
-
-`$ python3 src/search.py -f data.jsonl`
-
-`$ python3 src/search.py -search -db -f queries.txt > result.txt`
+    * Indexにクエリを与えて検索する
+    * `$ python3 src/search.py -search -db mydb -f queries.txt > result.txt`
 
 * src/mk_data.py
   * bge-m3モデルのFine-tuneのためのデータ作成用
+    * Reference: [https://bge-model.com/index.html](https://bge-model.com/index.html)
+
 
 
 
